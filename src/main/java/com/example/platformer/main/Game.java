@@ -29,10 +29,10 @@ public class Game implements Runnable{
         while (true){
             now = System.nanoTime();
             if (now - lastFrame >= timePerFrame){
+                frames++;
                 gamePanel.repaint();
                 lastFrame = now;
             }
-            frames++;
             if (System.currentTimeMillis() - lastCheck >= 1000){
                 lastCheck = System.currentTimeMillis();
                 System.out.println("FPS: " + frames);
